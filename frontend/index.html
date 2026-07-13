@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Diary</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="topbar">
+        <div>
+          <h1>Fitness Diary</h1>
+          <p id="userStatus">Not signed in</p>
+        </div>
+        <button id="logoutButton" class="secondary hidden">Logout</button>
+      </section>
+
+      <section id="authSection" class="layout">
+        <form id="registerForm" class="panel">
+          <h2>Register</h2>
+          <label>
+            Name
+            <input id="registerName" type="text" required />
+          </label>
+          <label>
+            Email
+            <input id="registerEmail" type="email" required />
+          </label>
+          <label>
+            Password
+            <input id="registerPassword" type="password" required />
+          </label>
+          <button type="submit">Create account</button>
+        </form>
+
+        <form id="loginForm" class="panel">
+          <h2>Login</h2>
+          <label>
+            Email
+            <input id="loginEmail" type="email" required />
+          </label>
+          <label>
+            Password
+            <input id="loginPassword" type="password" required />
+          </label>
+          <button type="submit">Login</button>
+        </form>
+      </section>
+
+      <section id="diarySection" class="hidden">
+        <form id="entryForm" class="panel entry-panel">
+          <h2>New entry</h2>
+          <label>
+            Title
+            <input id="entryTitle" type="text" required />
+          </label>
+          <label>
+            Mood
+            <input id="entryMood" type="text" placeholder="optional" />
+          </label>
+          <label>
+            Content
+            <textarea id="entryContent" rows="5" required></textarea>
+          </label>
+          <button type="submit">Save entry</button>
+        </form>
+
+        <section class="panel">
+          <div class="section-header">
+            <h2>My entries</h2>
+            <button id="refreshButton" class="secondary">Refresh</button>
+          </div>
+          <div id="entriesList" class="entries-list"></div>
+        </section>
+      </section>
+
+      <p id="message" class="message"></p>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

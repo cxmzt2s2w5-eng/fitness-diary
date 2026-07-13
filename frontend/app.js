@@ -1,5 +1,10 @@
-const AUTH_URL = "http://127.0.0.1:8100";
-const DIARY_URL = "http://127.0.0.1:8200";
+const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+const AUTH_URL = isLocal
+  ? "http://127.0.0.1:8100"
+  : "https://fitness-diary-auth-cxmzt2s2w5.onrender.com";
+const DIARY_URL = isLocal
+  ? "http://127.0.0.1:8200"
+  : "https://fitness-diary-diary-cxmzt2s2w5.onrender.com";
 
 const authSection = document.getElementById("authSection");
 const diarySection = document.getElementById("diarySection");
